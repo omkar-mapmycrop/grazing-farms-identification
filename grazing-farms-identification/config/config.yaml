@@ -1,0 +1,44 @@
+paths:
+  root: "/data/grazing"
+  aoi: "/data/grazing/AOI.geojson"
+  aoi_utm: "/data/grazing/AOI_UTM.geojson"
+  naip_images:
+    - "/data/grazing/naip/tile_1.tif"
+    - "/data/grazing/naip/tile_2.tif"
+  outputs_dir: "/data/grazing/outputs"
+  dem:
+    dem_path: "/data/grazing/dem/dem.tif"
+    slope_deg: "/data/grazing/dem/slope_deg.tif"
+    slope_reclass: "/data/grazing/dem/slope_reclass.tif"
+  cdl:
+    cdl_src: "/data/grazing/cdl/cdl.tif"
+    cdl_resampled: "/data/grazing/cdl/cdl_resampled.tif"
+  indices:
+    ndvi_dir: "/data/grazing/outputs/patches/ndvi"
+    savi_dir: "/data/grazing/outputs/patches/savi"
+    evi_dir:  "/data/grazing/outputs/patches/evi"
+    glcm_dir: "/data/grazing/outputs/patches/glcm"
+    ndvi_active_dir: "/data/grazing/outputs/patches/ndvi_active"
+    savi_active_dir:  "/data/grazing/outputs/patches/savi_active"
+    final_mask_dir: "/data/grazing/outputs/patches/final_mask"
+  farms:
+    farm_shp: "/data/grazing/farms/farm_boundary.shp"
+    farm_clipped: "/data/grazing/farms/farm_boundary_clipped.shp"
+    farm_mask: "/data/grazing/farms/farm_boundary_mask.tif"
+  mosaics:
+    grazing_mosaic: "/data/grazing/outputs/mosaic_final_grazing.tif"
+    grazing_with_farms: "/data/grazing/outputs/mosaic_final_grazing_farmupdated_new.tif"
+
+thresholds:
+  ndvi: {min: 0.15, max: 0.35}
+  savi: {min: 0.15, max: 0.40}
+  slope_reclass: {gentle_max_deg: 30.0}
+
+consensus:
+  class_values: {grazing: 1, non_grazing: 2}
+  enforce_farm_as_class: 2
+
+runtime:
+  chunk_size: 4096
+  max_workers: 32
+  batch_size: 10

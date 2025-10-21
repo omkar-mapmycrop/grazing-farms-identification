@@ -1,0 +1,3 @@
+- [x] Configured
+- [x] Deterministic thresholds
+- [x] Restart-safe

@@ -1,0 +1,23 @@
+
+[build-system]
+requires = ["setuptools>=61.0"]
+build-backend = "setuptools.build_meta"
+
+[project]
+name = "grazing-farms-identification"
+version = "0.1.0"
+description = "Independent pipeline for identifying grazing farms from imagery, DEM, and crop data"
+requires-python = ">=3.9"
+dependencies = [
+    "boto3",
+    "rasterio",
+    "numpy",
+    "geopandas",
+    "shapely",
+    "tqdm",
+    "scikit-image",
+    "matplotlib",
+    "pyproj",
+    "fiona",
+    "psutil",
+]

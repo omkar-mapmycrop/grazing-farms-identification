@@ -1,0 +1,11 @@
+boto3
+rasterio
+numpy
+geopandas
+shapely
+tqdm
+scikit-image
+matplotlib
+pyproj
+fiona
+psutil
